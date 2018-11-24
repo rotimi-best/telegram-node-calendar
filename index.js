@@ -7,7 +7,7 @@ let called = false;
 const bot = new Telegram.Telegram(process.env.API_KEY, {
     workers: 1,
     webAdmin: {
-      port: 8081,
+      port: 8089,
       host: "127.0.0.1"
     }
 });
