@@ -5,7 +5,6 @@ const calendar = new CalendarModule.Calendar();
 module.exports = (month) => {
     const today = new Date();
     let monthNumber = !isNaN(month) ? month: today.getMonth();
-    console.log(monthNumber)
     let year = today.getFullYear();
     
     if (monthNumber > 12) {

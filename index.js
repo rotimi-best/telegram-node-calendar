@@ -57,10 +57,6 @@ class TodoController extends TelegramBaseController {
     }
     
     generateMenu ($, monthnum = '') {
-        if (called) {
-            return;
-        }
-        console.log('monthnum', monthnum);
         
         let {monthCalendar, monthText, monthNumber, year} = makeCalendar(monthnum);
         
