@@ -7,7 +7,7 @@ I made this because I just needed a calendar interface for a [todo bot](https://
 
 # Usage
 - You need to create a `.env` file and add an API_KEY=<KEY_FROM_BOT_FATHER>
-- Then run `npm install` and `node index.js`
+- Then run `npm install` and `npm start`
 - Go to telegram and use the /calendar command
 
 
