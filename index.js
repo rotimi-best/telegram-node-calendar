@@ -19,8 +19,6 @@ class TodoController extends TelegramBaseController {
     startDatePickerHandler($) {
         let {monthNumber} = makeCalendar();
         let genMenus = this.generateMenu($, monthNumber);
-        const btnParams = { $, month: monthNumber};
-        genMenus.push(this.genPrevtBtn(btnParams), this.genNextBtn(btnParams));
         
         $.runInlineMenu({
             layout: [1,7,7,7,7,7,7,7,3],
@@ -28,32 +26,6 @@ class TodoController extends TelegramBaseController {
             params: ['Choose a date'],
             menu: genMenus
         });
-    }
-
-    genNextBtn ({$, month}) {
-        month += 1;
-        const menu = this.generateMenu($, month);
-        let next = { 
-                text: '▶️',
-                message: 'Choose a date',
-                layout: [1,7,7,7,7,7,7,7,3],
-                menu: menu           
-
-        };
-        return next;
-    }
-
-    genPrevtBtn ({$, month}) {
-        month -= 1;
-        const menu = this.generateMenu($, month);
-
-        let prev = {
-            text: '◀️',
-            message: 'Choose a date',
-            layout: [1,7,7,7,7,7,7,7,3],
-            menu: menu 
-        };
-        return prev;
     }
     
     generateMenu ($, monthnum = '') {

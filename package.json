@@ -4,14 +4,14 @@
   "description": "A telegram inline calendar in Nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rotimi-Best/telegram-node-calendar.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rotimi-Best",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Rotimi-Best/telegram-node-calendar/issues"
