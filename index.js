@@ -4,7 +4,7 @@ const TextCommand = Telegram.TextCommand;
 const makeCalendar = require('./modules/calendar');
 require("dotenv").config();
 let called = false;
-const bot = new Telegram.Telegram(process.env.API_KEY, {
+const bot = new Telegram.Telegram(process.env.BOT_TOKEN, {
     workers: 1 });
 
 class TodoController extends TelegramBaseController {
@@ -25,29 +25,39 @@ class TodoController extends TelegramBaseController {
         });
     }
 
+    nextFields(menu) {
+        return { 
+            text: '▶️',
+            message: 'Choose a date',
+            layout: [1,7,7,7,7,7,7,7,3],
+            menu: menu         
+        };
+    }
+
     genNextBtn ({$, month}) {
+        const { messageId } = $.message;
+        console.log(messageId)
         month += 1;
         const menu = this.generateMenu($, month);
-        let next = { 
-                text: '▶️',
-                message: 'Choose a date',
-                layout: [1,7,7,7,7,7,7,7,3],
-                menu: menu           
-
-        };
+        const next = this.nextFields(menu);
         return next;
     }
 
-    genPrevtBtn ({$, month}) {
-        month -= 1;
-        const menu = this.generateMenu($, month);
-
-        let prev = {
+    prevFields(menu) {
+        return {
             text: '◀️',
             message: 'Choose a date',
             layout: [1,7,7,7,7,7,7,7,3],
             menu: menu 
         };
+    }
+
+    genPrevtBtn ({$, month}) {
+        const { messageId } = $.message;
+        console.log(messageId)
+        month -= 1;
+        const menu = this.generateMenu($, month);
+        const prev = this.prevFields(menu);
         return prev;
     }
     
