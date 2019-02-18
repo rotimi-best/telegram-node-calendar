@@ -34,6 +34,14 @@ class TodoController extends TelegramBaseController {
         };
     }
 
+    previous() {
+        return { text: "", 
+            callback: (cq) => {
+                bot.api.answerCallbackQuery(cq.id, { text: 'Previous!'});
+            }
+        }
+    }
+
     genNextBtn ({$, month}) {
         const { messageId } = $.message;
         console.log(messageId)
@@ -54,7 +62,6 @@ class TodoController extends TelegramBaseController {
 
     genPrevtBtn ({$, month}) {
         const { messageId } = $.message;
-        console.log(messageId)
         month -= 1;
         const menu = this.generateMenu($, month);
         const prev = this.prevFields(menu);
