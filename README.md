@@ -15,4 +15,4 @@ I made this because I just needed a calendar interface for a [todo bot](https://
 ![](demo.gif)
 
 # Contribution
-As you saw from the demo, I wasn't able to create the next and previous button for the inline button after the first click, if anyone knows how to get that done, please make a pull request and make it. Thank you.
+Feel free to submit issues and help this repository!
