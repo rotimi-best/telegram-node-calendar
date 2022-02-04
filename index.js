@@ -43,7 +43,7 @@ class TodoController extends TelegramBaseController {
             layout: [1, 7, 7, 7, 7, 7, 7, 7, 3],
             method: 'sendMessage',
             params: ['Choose a date'],
-            menu: this.out[6]
+            menu: this.out[monthNumber]
         });
     }
 
